@@ -33,7 +33,7 @@
   const suggestionCards  = document.querySelectorAll(".suggestion-card");
 
   /* ── STATE ────────────────────────────────── */
-  const GEMINI_API_KEY = "AIzaSyDNM7uOFpf7oobemPGjK4AVRqPhzWqM740";
+  const GEMINI_API_KEY = "AIzaSyBQGac4jVXnVFKKf7DgUwze1q-oWK43o_k";
   
   let currentMode        = "instant";
   let currentChatId      = null;
