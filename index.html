@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maring AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="18,2 34,10 34,26 18,34 2,26 2,10" fill="none" stroke="var(--maroon)" stroke-width="1.5"/>
+            <polygon points="18,7 29,13 29,25 18,31 7,25 7,13" fill="var(--maroon)" opacity="0.15"/>
+            <text x="18" y="23" text-anchor="middle" fill="var(--maroon)" font-size="13" font-family="Cinzel" font-weight="700">M</text>
+          </svg>
+        </div>
+        <span class="logo-text">Maring</span>
+      </div>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <button class="new-chat-btn" id="newChatBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+      New Chat
+    </button>
+
+    <div class="sidebar-section-label">Recent Chats</div>
+    <div class="chat-history-list" id="chatHistoryList">
+      <!-- Dynamically populated -->
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="theme-toggle-row">
+        <span class="toggle-label">Dark Mode</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="themeToggle" checked />
+          <span class="toggle-track">
+            <span class="toggle-thumb"></span>
+          </span>
+        </label>
+      </div>
+      <div class="sidebar-user">
+        <div class="user-avatar">U</div>
+        <span class="user-name">User</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- OVERLAY -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content" id="mainContent">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn" aria-label="Open sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+      <div class="topbar-logo">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+          <polygon points="14,1 27,8 27,20 14,27 1,20 1,8" fill="none" stroke="var(--maroon)" stroke-width="1.5"/>
+          <text x="14" y="19" text-anchor="middle" fill="var(--maroon)" font-size="11" font-family="Cinzel" font-weight="700">M</text>
+        </svg>
+        <span>Maring</span>
+      </div>
+
+      <!-- MODE SELECTOR -->
+      <div class="mode-selector">
+        <button class="mode-btn active" data-mode="instant" title="Fast responses">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <span>Instant</span>
+        </button>
+        <button class="mode-btn" data-mode="expert" title="Detailed responses">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <span>Expert</span>
+        </button>
+        <button class="mode-btn" data-mode="pro" title="Advanced AI power">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <span>Pro</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- CHAT AREA -->
+    <div class="chat-area" id="chatArea">
+      <!-- Welcome Screen -->
+      <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-glyph">
+          <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="60,4 114,32 114,88 60,116 6,88 6,32" fill="none" stroke="var(--maroon)" stroke-width="1.5" opacity="0.6"/>
+            <polygon points="60,16 102,40 102,80 60,104 18,80 18,40" fill="var(--maroon)" opacity="0.07"/>
+            <polygon points="60,28 90,48 90,72 60,92 30,72 30,48" fill="var(--maroon)" opacity="0.1"/>
+            <text x="60" y="74" text-anchor="middle" fill="var(--maroon)" font-size="42" font-family="Cinzel" font-weight="700">M</text>
+          </svg>
+        </div>
+        <h1 class="welcome-title">Maring</h1>
+        <p class="welcome-sub">Your intelligent companion. Ask anything, create anything.</p>
+
+        <div class="suggestion-grid">
+          <button class="suggestion-card" data-prompt="What are the latest trends in artificial intelligence?">
+            <span class="sug-icon">🤖</span>
+            <span>AI Trends</span>
+          </button>
+          <button class="suggestion-card" data-prompt="Write a short poem about the night sky.">
+            <span class="sug-icon">✍️</span>
+            <span>Write a poem</span>
+          </button>
+          <button class="suggestion-card" data-prompt="Generate an image of a futuristic city at night with neon lights">
+            <span class="sug-icon">🎨</span>
+            <span>Generate image</span>
+          </button>
+          <button class="suggestion-card" data-prompt="Help me debug my code and explain best practices.">
+            <span class="sug-icon">💻</span>
+            <span>Debug code</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Messages Container -->
+      <div class="messages-container" id="messagesContainer"></div>
+    </div>
+
+    <!-- INPUT AREA -->
+    <div class="input-area">
+      <!-- Image Preview -->
+      <div class="image-preview-bar" id="imagePreviewBar" style="display:none;">
+        <div class="img-preview-wrap">
+          <img id="previewThumb" src="" alt="preview" />
+          <button class="remove-img-btn" id="removeImgBtn" aria-label="Remove image">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <span class="img-preview-label">Image attached</span>
+      </div>
+
+      <div class="input-box">
+        <button class="input-action-btn upload-btn" id="uploadBtn" title="Upload image">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+            <path d="M21 15l-5-5L5 21"/>
+          </svg>
+        </button>
+        <input type="file" id="fileInput" accept="image/*" style="display:none;" />
+
+        <button class="input-action-btn imggen-btn" id="imageGenBtn" title="Generate image">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </button>
+
+        <textarea
+          id="messageInput"
+          class="message-input"
+          placeholder="Message Maring…"
+          rows="1"
+          maxlength="4000"
+        ></textarea>
+
+        <button class="send-btn" id="sendBtn" aria-label="Send message" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+          </svg>
+        </button>
+      </div>
+
+      <p class="input-footer">Maring can make mistakes. Consider checking important info.</p>
+    </div>
+
+  </main>
+
+  <!-- IMAGE MODAL -->
+  <div class="img-modal" id="imgModal" style="display:none;">
+    <div class="img-modal-backdrop" id="imgModalBackdrop"></div>
+    <div class="img-modal-content">
+      <button class="img-modal-close" id="imgModalClose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <img id="imgModalImg" src="" alt="Full size image" />
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
