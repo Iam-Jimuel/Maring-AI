@@ -448,7 +448,7 @@
       const maxTokens = currentMode === "pro" ? 4096 : currentMode === "expert" ? 2048 : 1024;
 
       const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${GEMINI_API_KEY}`,
+        `/api/chat`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
